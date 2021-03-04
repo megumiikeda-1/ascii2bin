@@ -1,3 +1,51 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /********************************/
 /* Program Name: ascii2bin      */
 /* Author: Megumi Ikeda         */
@@ -28,13 +76,13 @@ byte ascii_value;
 retval = read(STDIN_FILENO, &ascii_value, 1);
 
 while (retval == 1) {
-	digit = ascii_value - offset;
-	if (digit == 0 || digit == 1) {
-		number = (number << 1) + digit;
-		retval = read(0, &ascii_value, 1);		
-	} else {
+	if (ascii_value != '0' && ascii_value != '1' && ascii_value != '\n') {
 		return 1;
-		void exit(int status);
+		void exit(int status);		
+	} else {
+		digit = ascii_value - offset;
+		number = (number << 1) + digit;
+		retval = read(0, &ascii_value, 1);
 	}
  }
 
@@ -47,51 +95,3 @@ if (number > pow(2,32)) {
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
