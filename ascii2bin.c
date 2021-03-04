@@ -34,6 +34,7 @@ while (retval == 1) {
 		retval = read(0, &ascii_value, 1);		
 	} else {
 		return 1;
+		void exit(int status);
 	}
  }
 
@@ -46,3 +47,51 @@ if (number > pow(2,32)) {
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
