@@ -20,36 +20,29 @@
 int main (int argc, char * argv[], char ** envp) {
 
 int offset = 0x30;
-int binary = 0;
 int number;
 int retval = 1;
 int digit;
-int count = 0;
-int decimal = 0;
 byte ascii_value;
-    
+
 retval = read(STDIN_FILENO, &ascii_value, 1);
-    
+
 while (retval == 1) {
-	count++;
-    digit = ascii_value - offset;
-    binary = (binary << 1) + digit;
-    retval = read(0, &ascii_value, 1);
+	if (ascii_value != '0' || ascii_value != '1')
+	{
+		fprintf(stderr, "Error Detected!\n");
+		return 1;
+	}
+	digit = ascii_value - offset;
+	number = (number << 1) + digit;
+	retval = read(0, &ascii_value, 1);
  }
- 
- for (int i = (count - 1); i >= 0; i--) {
- 	number = binary / pow(10,i);
- 	decimal += number * pow(2, i);
- }
- 
- if (ascii_value != '0' && ascii_value != '1' && ascii_value != '\n') {
+
+if (number > pow(2,32)) {
  	fprintf(stderr, "Error Detected!\n");
-    return 1;
- } else if (decimal > pow(2,32)) {
- 	fprintf(stderr, "Error Detected!\n");
-    return 1;
+	return 1;
  } else {
-	printf("%u\n", decimal);
+	printf("%u\n", number);
 	return 0;
 }
 
@@ -75,36 +68,29 @@ while (retval == 1) {
 int main (int argc, char * argv[], char ** envp) {
 
 int offset = 0x30;
-int binary = 0;
 int number;
 int retval = 1;
 int digit;
-int count = 0;
-int decimal = 0;
 byte ascii_value;
-    
+
 retval = read(STDIN_FILENO, &ascii_value, 1);
-    
+
 while (retval == 1) {
-	count++;
-    digit = ascii_value - offset;
-    binary = (binary << 1) + digit;
-    retval = read(0, &ascii_value, 1);
+	if (ascii_value != '0' || ascii_value != '1')
+	{
+		fprintf(stderr, "Error Detected!\n");
+		return 1;
+	}
+	digit = ascii_value - offset;
+	number = (number << 1) + digit;
+	retval = read(0, &ascii_value, 1);
  }
- 
- for (int i = (count - 1); i >= 0; i--) {
- 	number = binary / pow(10,i);
- 	decimal += number * pow(2, i);
- }
- 
- if (ascii_value != '0' && ascii_value != '1' && ascii_value != '\n') {
+
+if (number > pow(2,32)) {
  	fprintf(stderr, "Error Detected!\n");
-    return 1;
- } else if (decimal > pow(2,32)) {
- 	fprintf(stderr, "Error Detected!\n");
-    return 1;
+	return 1;
  } else {
-	printf("%u\n", decimal);
+	printf("%u\n", number);
 	return 0;
 }
 
