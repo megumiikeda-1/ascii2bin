@@ -28,8 +28,8 @@ byte ascii_value;
 retval = read(STDIN_FILENO, &ascii_value, 1);
 
 while (retval == 1) {
-	if (ascii_value == '0' || ascii_value == '1') {
-		digit = ascii_value - offset;
+	digit = ascii_value - offset;
+	if (digit == 0 || digit == 1) {
 		number = (number << 1) + digit;
 		retval = read(0, &ascii_value, 1);		
 	} else {
