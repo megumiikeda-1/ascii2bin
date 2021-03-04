@@ -1,51 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /********************************/
 /* Program Name: ascii2bin      */
 /* Author: Megumi Ikeda         */
@@ -68,7 +20,7 @@
 int main (int argc, char * argv[], char ** envp) {
 
 int offset = 0x30;
-int number;
+int number = 0;
 int retval = 1;
 int digit;
 byte ascii_value;
@@ -95,3 +47,51 @@ if (number > pow(2,32)) {
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
