@@ -13,9 +13,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <math.h>
 
 #define byte unsigned char
-#define MAX_INT (1 << 32)
+#define MAX_INT pow(2,32)
 
 int main (int argc, char * argv[], char ** envp) {
 
@@ -31,7 +32,6 @@ while ( (retval == 1) && (ascii_value != '\n') ) {
 	if ( (ascii_value == '0') || (ascii_value == '1') ) {
 		digit = ascii_value - offset;
 		number = (number << 1) + digit;
-		printf("%u\n", number);
 		retval = read(0, &ascii_value, 1);				
 	} else {
 		return 1;
