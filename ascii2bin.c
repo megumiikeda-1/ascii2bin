@@ -31,6 +31,7 @@ while ( (retval == 1) && (ascii_value != '\n') ) {
 	if ( (ascii_value == '0') || (ascii_value == '1') ) {
 		digit = ascii_value - offset;
 		number = (number << 1) + digit;
+		printf("%u\n", number);
 		retval = read(0, &ascii_value, 1);				
 	} else {
 		return 1;
@@ -84,7 +85,8 @@ if (number > MAX_INT) {
 
 
 
- 
+
+
 
 
 
